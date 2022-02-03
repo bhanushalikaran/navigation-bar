@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bottom Navigation Bar | The CreatorSpace</title>
+        <link rel="shortcut icon" href="images/favicon.png" />
+        <script src="https://use.fontawesome.com/07020a472b.js"></script>
+        <link href="http://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css" />
+        <link href="css/my-css.css" rel="stylesheet" />
+    </head>
+    <body>
+      <div class="container">
+          <div class="nav bg ">
+              <i class="fa fa-user"></i>
+              <p>Profile</p>
+          </div>
+
+          <div class="nav bg active">
+              <i class="fa fa-home"></i>
+              <p>Home</p>
+          </div>
+
+          <div class="nav bg">
+              <i class="fa fa-heart"></i>
+              <p>Favorites</p>
+          </div>
+      </div>
+    </body>
+
+    <script>
+        //lets get the nav tabs
+
+        const tabs = document.querySelectorAll(".nav");
+
+        tabs.forEach((clickedTab) => {
+            //adding click event
+            clickedTab.addEventListener("click", ()=>{
+                //remove current active tab
+                tabs.forEach((nav)=>{
+                    nav.classList.remove("active");
+                });
+
+                //switch to next active tab
+                clickedTab.classList.add("active");
+            });
+        });
+    </script>
+</html>
